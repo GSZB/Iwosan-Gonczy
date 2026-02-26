@@ -256,8 +256,8 @@
 
 .sidebar__emergency {
     padding: 20px;
-    background-color: #f4f6f8;
-    border-radius: 16px;
+    background-color: var(--hover-bg);
+    border-radius: 0 0 16px 16px;
     display: flex;
     align-items: flex-start;
     gap: 12px;
