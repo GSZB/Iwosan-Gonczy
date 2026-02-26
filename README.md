@@ -1,3 +1,7 @@
+## Live Demo
+
+**[https://gszb.github.io/Iwosan-Gonczy/](https://gszb.github.io/Iwosan-Gonczy/)**
+
 # Iwosan Health Dashboard
 
 A modern, responsive medical dashboard built with React 19 and Vite. The application provides healthcare professionals with an at-a-glance overview of diagnostics, patient statistics, health indices, and upcoming appointments.
