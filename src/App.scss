@@ -1,0 +1,116 @@
+.dashboard__welcome {
+    padding: 12px 16px 12px 22px;
+}
+
+.dashboard__welcome-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.dashboard__welcome-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard__welcome-title {
+    margin: 0;
+    font-size: 24px;
+    color: var(--text-primary);
+}
+
+.dashboard__welcome-highlight {
+    color: #ff4842;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+.dashboard__welcome-subtitle {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.dashboard__theme {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.dashboard__theme-img {
+    flex-shrink: 0;
+}
+
+.dashboard__theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0;
+    cursor: pointer;
+    font-family: inherit;
+
+    &:focus-visible {
+        outline: 2px solid var(--accent-color);
+        outline-offset: 4px;
+        border-radius: 4px;
+    }
+}
+
+.dashboard__theme-track {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    background-color: #212b36;
+    border-radius: 24px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    padding: 0 3px;
+
+    &--dark {
+        background-color: #ff4842;
+    }
+}
+
+.dashboard__theme-thumb {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    transform: translateX(0);
+
+    &--dark {
+        transform: translateX(20px);
+    }
+}
+
+.dashboard__theme-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.dashboard__section {
+    padding: 40px 24px;
+    min-height: 80vh;
+}
+
+.dashboard__section--large-padding {
+    padding: 40px 32px;
+}
+
+.dashboard__section-title {
+    color: var(--text-primary);
+}
+
+.dashboard__section-text {
+    color: var(--text-secondary);
+}

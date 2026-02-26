@@ -1,0 +1,317 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    height: 100%;
+    padding: 25px 0 0;
+    background-color: var(--sidebar-background);
+    border-radius: 20px;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.sidebar--collapsed {
+    width: 80px;
+}
+
+.sidebar__logo-container {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding: 0 28px 0 32.5px;
+    margin-bottom: 14px;
+}
+
+.sidebar--collapsed .sidebar__logo-container {
+    justify-content: center;
+    padding: 0;
+}
+
+.sidebar__logo-img {
+    width: 50px;
+    height: 56px;
+    flex-shrink: 0;
+}
+
+.sidebar__logo-text {
+    margin-bottom: 9px;
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    transition: opacity 0.2s ease, width 0.2s ease;
+}
+
+.sidebar--collapsed .sidebar__logo-text {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+}
+
+.sidebar__logo-tm {
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.sidebar__expand-btn {
+    margin-left: auto;
+    width: 34px;
+    flex-shrink: 0;
+
+    @media (max-width: 1024px) {
+        display: none !important;
+    }
+
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 40px;
+        height: auto;
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--accent-color);
+        outline-offset: 2px;
+        border-radius: 4px;
+    }
+}
+
+.sidebar__expand-btn--active img {
+    filter: brightness(0) saturate(100%) invert(28%) sepia(93%) saturate(7000%) hue-rotate(355deg) brightness(101%) contrast(107%);
+}
+
+.sidebar__mobile-close {
+    display: none;
+    cursor: pointer;
+    padding: 4px;
+    margin-left: auto;
+    color: var(--text-primary);
+
+    @media (max-width: 1024px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--accent-color);
+        outline-offset: 2px;
+        border-radius: 4px;
+    }
+}
+
+.sidebar__divider {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #d3d3d3;
+    margin-bottom: 40px;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+.sidebar__nav {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #d3d3d3 transparent;
+
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #d3d3d3;
+        border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: #a0a0a0;
+    }
+}
+
+.sidebar__list {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+}
+
+.sidebar__link {
+    display: flex;
+    align-items: center;
+    padding: 19px 30px 19px 42px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 15px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+
+    &:hover {
+        background-color: var(--hover-bg);
+        color: var(--text-primary);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--accent-color);
+        outline-offset: -2px;
+    }
+
+    &--active {
+        background-color: var(--sidebar-active-bg);
+        color: var(--accent-color);
+    }
+
+    &--danger {
+        color: var(--danger-color);
+    }
+
+    &--danger:hover {
+        background-color: var(--hover-bg);
+        color: var(--danger-color);
+    }
+}
+
+.sidebar--collapsed .sidebar__link {
+    justify-content: center;
+    padding: 14px;
+}
+
+.sidebar__icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 22px;
+    flex-shrink: 0;
+    transition: opacity 0.2s ease;
+}
+
+.sidebar--collapsed .sidebar__icon {
+    margin-right: 0;
+}
+
+.sidebar__label {
+    letter-spacing: 0.3px;
+    overflow: hidden;
+    transition: opacity 0.2s ease;
+}
+
+.sidebar--collapsed .sidebar__label {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    position: absolute;
+}
+
+.sidebar__badge {
+    margin-left: auto;
+    background-color: var(--danger-color);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 12px;
+}
+
+.sidebar--collapsed .sidebar__badge {
+    display: none;
+}
+
+.sidebar__section-title {
+    padding: 0 37px;
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    letter-spacing: 0.3px;
+    margin-bottom: 4px;
+    margin-top: 19px;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: opacity 0.2s ease;
+}
+
+.sidebar--collapsed .sidebar__section-title {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.sidebar__emergency {
+    padding: 20px;
+    background-color: #f4f6f8;
+    border-radius: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    overflow: hidden;
+}
+
+.sidebar--collapsed .sidebar__emergency {
+    margin: 24px 12px 0;
+    padding: 12px;
+    justify-content: center;
+}
+
+.sidebar__emergency-icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    background-color: var(--accent-color);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.sidebar__emergency-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    overflow: hidden;
+    transition: opacity 0.2s ease;
+}
+
+.sidebar--collapsed .sidebar__emergency-content {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    position: absolute;
+}
+
+.sidebar__emergency-title {
+    font-weight: 700;
+    font-style: italic;
+    color: #ff4842;
+    font-size: 14px;
+}
+
+.sidebar__emergency-number {
+    font-size: 13px;
+    color: var(--text-primary);
+    font-weight: 400;
+
+    &:focus-visible {
+        outline: 2px solid var(--accent-color);
+        outline-offset: 2px;
+        border-radius: 2px;
+    }
+}
