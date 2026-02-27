@@ -66,6 +66,13 @@
     scrollbar-color: #d3d3d3 transparent;
 }
 
+.layout__container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-inline: 16px;
+}
+
 .layout__main::-webkit-scrollbar {
     width: 6px;
 }

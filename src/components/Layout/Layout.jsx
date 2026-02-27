@@ -24,8 +24,10 @@ const Layout = ({ children }) => {
                 />
             </aside>
             <main className="layout__main">
-                <Header onMenuToggle={toggleMobileMenu} />
-                {children}
+                <div className="layout__container">
+                    <Header onMenuToggle={toggleMobileMenu} />
+                    {children}
+                </div>
             </main>
         </div>
     );
